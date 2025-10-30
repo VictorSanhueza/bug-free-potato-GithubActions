@@ -27,7 +27,7 @@ jobs:
     - name: Publish
       run: dotnet publish src/wpm-api/WisdomPetMedicine.sln --configuration Release --output publish
     - name: Subir datos
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         path: publish
   storage:
@@ -36,12 +36,13 @@ jobs:
       needs: [build]
       steps:
       - name: Descargar datos
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: publish
       - name: Muestra el contenido del artefacto
         shell: bash
         run: ls publish -R
+
 
 
 
