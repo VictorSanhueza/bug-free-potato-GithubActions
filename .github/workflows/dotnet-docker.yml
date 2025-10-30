@@ -26,11 +26,10 @@ jobs:
       run: dotnet build src/wpm-api/WisdomPetMedicine.sln --no-restore 
     - name: Test
       run: dotnet test src/wpm-api/WisdomPetMedicine.sln --no-build --verbosity normal 
+  docker:
+    name: Contenerizacion con Docker y .NET
+    runs-on: ubuntu-latest
+    steps:
+    - name: docker build
+      run: docker build src/wpm-api --file src/wpm-api/WisdomPetMedicine.Api/Dockerfile --tag github-action-esencial
 
-docker:
-  name: Contenerizacion con Docker y .NET
-  runs-on: ubuntu-latest
-  steps:
-  - name: docker build
-
-    run: docker build src/wpm-api --file src/wpm-api/WisdomPetMedicine.Api/Dockerfile --tag github-action-esencial
