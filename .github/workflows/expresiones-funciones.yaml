@@ -20,10 +20,10 @@ jobs:
         dotnet-version: ${{ matrix.dotnetversion }}
         include-prerelease: true
     - name: Restore dependencies
-      run: dotnet restore ${{ SOLUTION_PATH }}
+      run: dotnet restore $SOLUTION_PATH
     - name: Build
-      run: dotnet build ${{ SOLUTION_PATH }} --configuration ${{ matrix.configuration }} --no-restore
+      run: dotnet build $SOLUTION_PATH --configuration ${{ matrix.configuration }} --no-restore
     - name: Pruebas unitarias
-      run: dotnet test ${{ SOLUTION_PATH }}
+      run: dotnet test $SOLUTION_PATH
       if: ${{ contains(matrix.dotnetversion, '6.0') }} # esta es una funcion de github
       # podria ser if: $ {{ matrix.dotnetversion == '6.0.x'}}
