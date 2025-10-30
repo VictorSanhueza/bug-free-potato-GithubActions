@@ -1,0 +1,35 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore src/wpm-api/WisdomPetMedicine.sln
+    - name: Build
+      run: dotnet build src/wpm-api/WisdomPetMedicine.sln --no-restore 
+    - name: Test
+      run: dotnet test src/wpm-api/WisdomPetMedicine.sln --no-build --verbosity normal 
+
+docker:
+  name: Contenerizacion con Docker y .NET
+  runs-on: ubuntu-latest
+  steps:
+  - name: docker build
+    run: docker build src/wpm-api --file src/wpm-api/WisdomPetMedicine.Api/Dockerfile --tag github-action-esencial
