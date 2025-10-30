@@ -15,8 +15,6 @@ Explora GitHub Actions como plataforma CI/CD para el control de código fuente q
 
 	``` git clone https://github.com/LinkedInLearning/GitHub-Actions-esencial-2488533.git ```
 
-Echa un vistazo a mis otros cursos en [LinkedIn Learning](https://www.linkedin.com/learning/instructors/rodrigo-diaz-concha).
-
 [0]: # (Replace these placeholder URLs with actual course URLs)
 [lil-course-url]: https://www.linkedin.com/learning/github-actions-esencial/desde-los-procesos-mas-simples-hasta-los-mas-complejos-con-github-actions
 [lil-thumbnail-url]: https://media.licdn.com/dms/image/C4E0DAQEdv3abpu4GoA/learning-public-crop_675_1200/0/1669818267108?e=2147483647&v=beta&t=CasWbfDT7N6QpkezKOzQHvAr4FRw6KStKkQoW1YUKn8
