@@ -31,7 +31,7 @@ jobs:
       with:
         path: publish
   storage:
-    - name: Almacenamiento
+      name: Almacenamiento
       runs-on: ubuntu-latest
       needs: [build]
       steps:
@@ -42,6 +42,7 @@ jobs:
       - name: Muestra el contenido del artefacto
         shell: bash
         run: ls publish -R
+
 
 
 
