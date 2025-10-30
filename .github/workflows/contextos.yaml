@@ -1,5 +1,4 @@
-name: Matriz de configuraciones y versión de .NET
-
+name: Contextos
 on:
   push:
     branches: [ "main" ]
