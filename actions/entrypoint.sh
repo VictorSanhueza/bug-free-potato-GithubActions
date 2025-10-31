@@ -5,4 +5,4 @@ api_url="https://swapi.dev/api/people/${INPUT_PERSON_ID}"
 
 person_name=$(curl "${api_url}" | jq ".name")
 
-echo "::set-output name=person_name::$person_name"
+echo "person_name=$person_name" >> "$GITHUB_OUTPUT"
