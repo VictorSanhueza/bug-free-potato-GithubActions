@@ -5,9 +5,9 @@ on:
 
 jobs:
   docker:
-    name: Contenerizacion con Docker y .NET
+    name: Contenerizacion con Podman y .NET
     runs-on: [self-hosted, windows]
     steps:
     - uses: actions/checkout@v4
     - name: docker build
-      run: docker build src/wpm-api --file src/wpm-api/WisdomPetMedicine.Api/Dockerfile --tag github-action-esencial
+      run: podman build src/wpm-api --file src/wpm-api/WisdomPetMedicine.Api/Dockerfile --tag github-action-esencial
